@@ -1,4 +1,4 @@
-<h1 align="center">:file_cabinet: Sitema Bancario</h1>
+<h1 align="center">:file_cabinet: Sistema Bancario</h1>
 
 ## :memo: Descrição
 Projeto de sistema bancario no qual é possivel, criar, atualizar e excluir contas, fazer saques, depositos e transferencias de valores, consultar saldo e emitir extrato, funcionalides essas que são acessadas atráves de rotas HTTP.
