@@ -103,7 +103,7 @@ Desenvolvido na linguagem JavaScript usando NodeJs para instalação de bibliote
         valor
         senha
 
-![alt text](./imagens/transferir.png)
+![alt text](./imagens/transferirvalor.png)
 
 
 * <b>Consultar Saldo 6</b>: Essa funcionalidade Torna possivel a consulta do saldo de uma conta. Conta essa que deve ser informada na rota junto com a senha 
@@ -116,7 +116,18 @@ Desenvolvido na linguagem JavaScript usando NodeJs para instalação de bibliote
     -   numero_conta
     -   senha
 
-* <b>Emitir extrato</b>: Essa Funcionalidade permite Emitir todo o historico de depositos, saldos e transferencias de uma determinada Conta
+![alt text](./imagens/saldo.png)
+
+* <b>Emitir extrato</b>: Essa Funcionalidade permite Emitir todo o historico de depositos, saldos e transferencias de uma determinada Conta, é nescessário passar no corpo da requisição as informações, Numero da conta, e senha.
+
+        Verbo: GEt
+        Rota: http://localhost:3000/contas/extrato?numero_conta=2&senha=12345
+        Dados do usuaro que dever ser enviados como parametros de rota:
+
+        numero_conta
+        senha
+
+![alt text](./imagens/emitirExtrato.png)
 
 ## :wrench: Tecnologias utilizadas
 * Tecnologia;
@@ -124,8 +135,6 @@ Desenvolvido na linguagem JavaScript usando NodeJs para instalação de bibliote
 ## :rocket: Rodando o projeto
 Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando para iniciar o projeto:
 ```
-<linha de comando>
+git clone 
 ```
 
-## :soon: Implementação futura
-* O que será implementado na próxima sprint?
