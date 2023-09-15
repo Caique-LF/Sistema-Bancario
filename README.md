@@ -130,11 +130,21 @@ Desenvolvido na linguagem JavaScript usando NodeJs para instalação de bibliote
 ![alt text](./imagens/emitirExtrato.png)
 
 ## :wrench: Tecnologias utilizadas
-* Tecnologia;
+![git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white) ![javaScript](https://img.shields.io/badge/JavaScript-FFFF00?style=for-the-badge&logo=javascript&logoColor=000000) ![NodeJS](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![ExpressJs](https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white) ![NPM](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white) ![]()
 
 ## :rocket: Rodando o projeto
 Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando para iniciar o projeto:
 ```
-git clone 
+//Clonando o repositório em sua maquina
+git clone git@github.com:Caique-LF/Sistema-Bancario.git
+
+//Navegando até o projeto
+cd Sitema-Bancario
+
+// Baixando dependências 
+npm install
+
+//Iniciando o Servidor
+npm run dev
 ```
 
