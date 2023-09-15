@@ -1,102 +1,84 @@
-<h1 align="center">:file_cabinet: Sistema Bancario</h1>
+<h1 align="center">:file_cabinet: Sistema Bancário</h1>
 
 ## :memo: Descrição
-Projeto de sistema bancario no qual é possivel, criar, atualizar e excluir contas, fazer saques, depositos e transferencias de valores, consultar saldo e emitir extrato, funcionalides essas que são acessadas atráves de rotas HTTP.
+Projeto de sistema bancário no qual é possível criar, atualizar e excluir contas, fazer saques, depósitos e transferências de valores, consultar saldo e emitir extrato, funcionalidades essas que são acessadas através de rotas HTTP.
 
-Desenvolvido na linguagem JavaScript usando NodeJs para instalação de bibliotecas(pacotes) NPM que facilitam e tornam possíveis as interações entre cliente e servidor. 
-
+Desenvolvido na linguagem JavaScript usando Node.js para instalação de bibliotecas (pacotes) NPM que facilitam e tornam possíveis as interações entre cliente e servidor.
 
 ## :books: Funcionalidades
-* <b>Listar contas</b>: Nessa funcionalidade o cliente pode ver todas as contas cadastradas no banco, contas essas que retornaram no corpo da resposta no formato json. 
--Para obter a resposta da rota é nescessario fazer uma requisição http apontando a porta em seguida passando os parametros de rotas e query params, sendo eles que /contas?senha-banco=(senha escolhida pelo desenvolvedor).
+* <b>Listar contas</b>: Nessa funcionalidade, o cliente pode ver todas as contas cadastradas no banco, contas essas que retornam no corpo da resposta no formato JSON.
+  - Para obter a resposta da rota, é necessário fazer uma requisição HTTP apontando a porta e passando os parâmetros de rotas e query params, sendo eles que /contas?senha-banco=(senha escolhida pelo desenvolvedor).
 
         Verbo: GET
-        Rota:  http://localhost:3000/contas?senha_banco=Cubos123Bank
+        Rota: http://localhost:3000/contas?senha_banco=Cubos123Bank
 
-        
 ![alt text](./imagens/listarContas.png)
 
+* <b>Criação de conta Bancária</b>: Essa funcionalidade possibilita a criação de contas, passando informações através do corpo da requisição em formato JSON. Apenas os campos de usuário são informados na requisição; os demais campos como número da conta e saldo são gerados automaticamente pelo sistema. Observe que ao criar a conta, o saldo é 0 (zero).
 
-* <b>Criação De conta Bancaria</b>: Essa funcionalidade possibilita a criação de contas, passando informações através do corpo da requisição em formato Json, apenas os campos de usuario são informados na requisição os demais campos como numero da conta, saldo são gerados altomaticamente pelo sistema. observe que ao criar a conta o saldo é 0(zero).
-
-
-        Verbo: GET
-        Rota:http://localhost:3000/contas
-        infomações do usuario que devem ser infomadas no corpo da requisição como JSon:
+        Verbo: POST
+        Rota: http://localhost:3000/contas
+        Informações do usuário que devem ser informadas no corpo da requisição como JSON:
 
         nome
-
         cpf
-
         data_nascimento
-
         telefone
-
         e-mail
-
         senha
 
 ![alt text](./imagens/criarContas.png)
 
-
-* <b>Atualização de usuário de uma conta</b>: Essa funcionalidade possibilita a Atualização de dados de usuário de uma conta especifica. É nescessarioo que seja infomado como parametro de rota o numero da conta na qual as atualições serão incrementadas. Os dados de usuário devem ser informados no corpo da requisição no formato Json.
+* <b>Atualização de usuário de uma conta</b>: Essa funcionalidade possibilita a atualização de dados de usuário de uma conta específica. É necessário informar como parâmetro de rota o número da conta nas quais as atualizações serão incrementadas. Os dados do usuário devem ser informados no corpo da requisição no formato JSON.
 
         Verbo: PUT
         Rota: http://localhost:3000/contas/2/usuario
-        Dados do usuaro que dever ser enviados no corpo da requisição:
+        Dados do usuário que devem ser enviados no corpo da requisição:
 
         nome
-
         cpf
-
         data_nascimento
-
         telefone
-
         e-mail
-
         senha
 
 ![alt text](./imagens/atualizarContas.png)
 
-
-* <b>Deletar conta bancaria</b>: Essa funcionalidade Exclui uma conta bancaria da memória do banco. Para usalá o cliente deve informar ao servidor o numero da conta como parametro de rota. 
+* <b>Deletar conta bancária</b>: Essa funcionalidade exclui uma conta bancária da memória do banco. Para usá-la, o cliente deve informar ao servidor o número da conta como parâmetro de rota.
 
         Verbo: DELETE
-        Rota:http://localhost:3000/contas/1
+        Rota: http://localhost:3000/contas/1
 
 ![alt text](./imagens/ExcluirContas.png)
 
-* <b>Depositar </b>: Essa funcionalidade possibilita o deposito dee valores em uma conta expecifica. No corpo da requisição a informações que devem ser enviadas são o numero da conta e o valor a ser depositado. 
-
+* <b>Depositar</b>: Essa funcionalidade possibilita o depósito de valores em uma conta específica. No corpo da requisição, as informações que devem ser enviadas são o número da conta e o valor a ser depositado.
 
         Verbo: POST
         Rota: http://localhost:3000/transacoes/depositar
-        Dados do usuaro que dever ser enviados no corpo da requisição:
+        Dados da transação que devem ser enviados no corpo da requisição:
 
-        numero_conta 
-        Valor
+        numero_conta
+        valor
 
 ![alt text](./imagens/depositar.png)
 
-* <b>Sacar</b>: Essa funcionalidade possibilita o saque de valores de uma determinada conta que deve ser informada no corpo da requisção junto com o valor a ser sacado e a SENHA.
+* <b>Sacar</b>: Essa funcionalidade possibilita o saque de valores de uma determinada conta que deve ser informada no corpo da requisição, junto com o valor a ser sacado e a senha.
 
-    
         Verbo: POST
-        Rota: http://localhost:3000/transacoes/depositar
-        Dados do usuaro que dever ser enviados no corpo da requisição:
+        Rota: http://localhost:3000/transacoes/sacar
+        Dados da transação que devem ser enviados no corpo da requisição:
 
         numero_conta
-        Valor
-        Senha
+        valor
+        senha
 
 ![alt text](./imagens/sacar.png)
 
-* <b>Transferir</b>: Essa funcionalidade possibilita transferir valores de uma conta para outra conta. Para usala devem ser informados no corpo da requisição Numero da conta de origem, Numero da conta de Destino, Valor a ser transferido e senha da conta de origem.
+* <b>Transferir</b>: Essa funcionalidade possibilita transferir valores de uma conta para outra conta. Para usá-la, devem ser informados no corpo da requisição o número da conta de origem, o número da conta de destino, o valor a ser transferido e a senha da conta de origem.
 
         Verbo: POST
         Rota: http://localhost:3000/transacoes/transferir
-        Dados do usuaro que dever ser enviados no corpo da requisição:
+        Dados da transação que devem ser enviados no corpo da requisição:
 
         numero_conta_origem
         numero_conta_destino
@@ -105,24 +87,18 @@ Desenvolvido na linguagem JavaScript usando NodeJs para instalação de bibliote
 
 ![alt text](./imagens/transferirvalor.png)
 
-
-* <b>Consultar Saldo 6</b>: Essa funcionalidade Torna possivel a consulta do saldo de uma conta. Conta essa que deve ser informada na rota junto com a senha 
+* <b>Consultar Saldo</b>: Essa funcionalidade torna possível a consulta do saldo de uma conta. A conta deve ser informada na rota, junto com a senha.
 
         Verbo: GET
         Rota: http://localhost:3000/contas/saldo?numero_conta=2&senha=12345
-       
- **Requisição** - query params
-
-    -   numero_conta
-    -   senha
 
 ![alt text](./imagens/saldo.png)
 
-* <b>Emitir extrato</b>: Essa Funcionalidade permite Emitir todo o historico de depositos, saldos e transferencias de uma determinada Conta, é nescessário passar no corpo da requisição as informações, Numero da conta, e senha.
+* <b>Emitir extrato</b>: Essa funcionalidade permite emitir todo o histórico de depósitos, saldos e transferências de uma determinada conta. É necessário passar no corpo da requisição as informações, número da conta e senha.
 
-        Verbo: GEt
+        Verbo: GET
         Rota: http://localhost:3000/contas/extrato?numero_conta=2&senha=12345
-        Dados do usuaro que dever ser enviados como parametros de rota:
+        Dados do usuário que devem ser enviados como parâmetros de rota:
 
         numero_conta
         senha
@@ -130,21 +106,21 @@ Desenvolvido na linguagem JavaScript usando NodeJs para instalação de bibliote
 ![alt text](./imagens/emitirExtrato.png)
 
 ## :wrench: Tecnologias utilizadas
-![git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white) ![javaScript](https://img.shields.io/badge/JavaScript-FFFF00?style=for-the-badge&logo=javascript&logoColor=000000) ![NodeJS](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![ExpressJs](https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white) ![NPM](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white) ![]()
+![Git](https://img.shields.io/badge/Git-E44C30?style=for-the-badge&logo=git&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-FFFF00?style=for-the-badge&logo=javascript&logoColor=000000) ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white) ![NPM](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)
 
 ## :rocket: Rodando o projeto
-Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando para iniciar o projeto:
+Para rodar o repositório, é necessário cloná-lo e dar o seguinte comando para iniciar o projeto:
+
 ```
-//Clonando o repositório em sua maquina
+// Clonando o repositório em sua máquina
 git clone git@github.com:Caique-LF/Sistema-Bancario.git
 
-//Navegando até o projeto
-cd Sitema-Bancario
+// Navegando até o projeto
+cd Sistema-Bancario
 
-// Baixando dependências 
+// Baixando dependências
 npm install
 
-//Iniciando o Servidor
+// Iniciando o Servidor
 npm run dev
 ```
-
